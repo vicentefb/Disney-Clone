@@ -8,6 +8,7 @@ import marvelLogo from "../public/marvel-button.png";
 import natgeoLogo from "../public/natgeo-button.png";
 import pixarLogo from "../public/pixar.png";
 import starwarsLogo from "../public/star-wars-button.png";
+import Head from "next/head";
 
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
@@ -77,6 +78,11 @@ export default function Home({ videos, account }) {
 
   return (
     <>
+      <Head>
+        <title>Disney+ Clone</title>
+        <meta name="description" content="Disney+ Clone" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NavBar account={account} />
       <div className="app">
         <div className="main-video">
