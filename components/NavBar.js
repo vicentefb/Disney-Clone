@@ -5,9 +5,12 @@ import logo from "../public/disney.png";
 const NavBar = ({ account }) => {
   return (
     <div className="navbar">
-      <Link href="/">
-        <Image src={logo} alt="Disney Logo" width={90} height={50} />
-      </Link>
+      <div className="logo-wrapper">
+        <Link href="/">
+          <Image src={logo} alt="Disney Logo" width={90} height={50} />
+        </Link>
+      </div>
+
       <div className="account-info">
         <p>Welcome {account.username}</p>
         <img className="avatar" src={account.avatar.url} />
