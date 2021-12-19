@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Link from "next/Link";
 import { gql, GraphQLClient } from "graphql-request";
 import Image from "next/image";
+import Head from "next/head";
+
 export const getServerSideProps = async (pageContext) => {
   const url = process.env.ENDPOINT;
   const graphQLClient = new GraphQLClient(url, {
@@ -59,6 +61,13 @@ const Video = ({ video }) => {
   const [watching, setWatching] = useState(false);
   return (
     <>
+      <Head>
+        <title>
+          Disney+ {video.slug.charAt(0).toUpperCase() + video.slug.slice(1)}{" "}
+        </title>
+        <meta name="description" content="Disney+ Clone" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {!watching && (
         <Image
           className="video-image"
