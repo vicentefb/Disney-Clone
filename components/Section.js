@@ -2,7 +2,7 @@ import Card from "./Card";
 
 const Section = ({ genre, videos }) => {
   return (
-    <div className={"section"}>
+    <div>
       <h3>{genre}</h3>
       <div>
         {videos.map((video) => (

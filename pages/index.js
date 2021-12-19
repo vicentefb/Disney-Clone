@@ -2,7 +2,7 @@ import { gql, GraphQLClient } from "graphql-request";
 import Section from "../components/Section";
 import NavBar from "../components/NavBar";
 import Link from "next/Link";
-import Image from "next/Image";
+import Image from "next/image";
 import disneyLogo from "../public/disney-button.png";
 import marvelLogo from "../public/marvel-button.png";
 import natgeoLogo from "../public/natgeo-button.png";
@@ -86,9 +86,12 @@ export default function Home({ videos, account }) {
       <NavBar account={account} />
       <div className="app">
         <div className="main-video">
-          <img
+          <Image
             src={randomVideo(videos).thumbnail.url}
             alt={randomVideo(videos).title}
+            width="100%"
+            height="100%"
+            layout="responsive"
           />
         </div>
         {/*<div className="video-feed">

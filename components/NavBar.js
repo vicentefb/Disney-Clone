@@ -1,5 +1,5 @@
 import Link from "next/Link";
-import Image from "next/Image";
+import Image from "next/image";
 import logo from "../public/disney.png";
 
 const NavBar = ({ account }) => {
@@ -13,7 +13,13 @@ const NavBar = ({ account }) => {
 
       <div className="account-info">
         <p>Welcome {account.username}</p>
-        <img className="avatar" src={account.avatar.url} />
+        <Image
+          className="avatar"
+          src={account.avatar.url}
+          alt=""
+          width={50}
+          height={50}
+        />
       </div>
     </div>
   );

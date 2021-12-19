@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/Link";
 import { gql, GraphQLClient } from "graphql-request";
-
+import Image from "next/image";
 export const getServerSideProps = async (pageContext) => {
   const url = process.env.ENDPOINT;
   const graphQLClient = new GraphQLClient(url, {
@@ -60,10 +60,11 @@ const Video = ({ video }) => {
   return (
     <>
       {!watching && (
-        <img
+        <Image
           className="video-image"
           src={video.thumbnail.url}
           alt={video.title}
+          layout="fill"
         />
       )}
       {!watching && (
